@@ -49,8 +49,9 @@ Here we intend to build and tune agent-based models representing one of a number
 - Centralized. Separate, private data architectures. Siloed nodes.
 - Consortium. Private blockchains, proprietary protocol, trusted nodes.
 - Fractal federal. Public or private blockchain, open protocol, mix of trusted and incentivized nodes.
-- Decentralized. Public blockchains, open protocol, incentivized nodes.
+- Decentralized. Public blockchains, open protocols, incentivized nodes.
 
+- Constellations of each - single network, or usage of multiple interoperable networks.
 
 **Self-Sovereign Identity**
 
@@ -70,7 +71,20 @@ Corda
 Hyperledger
 
 
+**Case Studies**
+
+Armaments and munitions
+
+Pharmaceuticals - cold chain
+
+Fine art and jewelry
+
+
 We intend to design the physical and informational systems with an eye towards integration with the existing legal system. Ricardian contracts are human-readable contracts that delegate some authority to smart contracts. We hope to incorporate research into the existing legal mechanisms for enforcing arms control treaties and propose a configuration that might serve as the basis for Ricardian contract design. We will examine technical, political and economic factors in the design of Ricardian treaties, in which sovereign states utilize distributed ledgers and smart contracts to govern informational assets related to arms control (such as compliance reporting).
+
+**Edge computing and machine learning**
+
+We may seek to understand implications of different approaches to data processing on system dynamics. Primarily we will examine the difference between performing some computation on the sensor (i.e. edge computing) and streaming raw data to a cloud server for analysis. We intend to dissect the technical and ethical considerations of each, related to network loads, data privacy and ownership, device specification constraints, interoperability of data formats / schemas, etc. Though well beyond the scope of our research, some discussion of the possible implications of emerging homomorphic cryptographic techniques may prove relevant to understanding data privacy. Agents within models may be programmed to employ machine learning techniques to process sensor data, including the triggering of transaction generation to be transmitted.
 
 **Overarching aims of the Dissertation (150-300 words – what you hope to achieve)**
 
