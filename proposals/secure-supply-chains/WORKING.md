@@ -51,7 +51,7 @@ Here we intend to build and tune agent-based models representing one of a number
 - Fractal federal. Public or private blockchain, open protocol, mix of trusted and incentivized nodes.
 - Decentralized. Public blockchains, open protocols, incentivized nodes.
 
-- Constellations of each - single network, or usage of multiple interoperable networks.
+- Constellations of each - single network, or usage of multiple interoperable networks. 
 
 **Self-Sovereign Identity**
 
