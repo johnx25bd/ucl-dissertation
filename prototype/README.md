@@ -45,6 +45,20 @@ The key take-away: to write the logic required to gain access to these smart con
                                      |==============| -->
 
 
+### Users
+
+#### Container
+
+If imbued with a unique cryptographic identity
+
+
+
+Challenges:
+- Detecting rogue devices (i.e. secrets have been extracted).
+-
+
+
+
 ## Information security
 
 Improving situational awareness for stakeholders in the global transport supply chain would create numerous opportunities to improve system efficiency, resulting in commercial and environmental benefits ([UN CEFACT Smart Containers White Paper 2019](http://www.unece.org/fileadmin/DAM/cefact/GuidanceMaterials/WhitePaperSmartContainers.pdf)). A transparent and reliable mechanism to ensure the security of the smart container's meta-information is a requirement if such a smart logistics network is to be implemented.
