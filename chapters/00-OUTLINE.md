@@ -28,7 +28,7 @@ The research question these simulations are designed to explore needs to be sign
 - Visualizing outputs (web visualization?)
 - Analysis of data recorded from model execution / parameter sweeps.
 
-Implement in Python? Maybe even Javascript?
+Implement in Python? Maybe even Javascript? (https://github.com/backspaces/agentscript? https://github.com/wybo/agentbase? https://github.com/noncomputable/AgentMaps?)
 
 5. Transition: Ethical and Pragmatic Considerations
 
@@ -38,7 +38,7 @@ Discuss the ethics of the system and possible implications of its emergence. Out
 - Economic. Key question - incentivizing private actors to share data (Lloyd's List Singapore panel on smart ports). Identify key industries and actors to convert in order to lead adoption, and ongoing initiatives to do so.
 - Behavioral. Why would people adopt a sub-optimal system?
 
-Propose DAOs shepherds.
+Propose DAO shepherds.
 
 6. Conclusion
 

@@ -61,16 +61,30 @@ Challenges:
 
 ## Information security
 
-Improving situational awareness for stakeholders in the global transport supply chain would create numerous opportunities to improve system efficiency, resulting in commercial and environmental benefits ([UN CEFACT Smart Containers White Paper 2019](http://www.unece.org/fileadmin/DAM/cefact/GuidanceMaterials/WhitePaperSmartContainers.pdf)). A transparent and reliable mechanism to ensure the security of the smart container's meta-information is a requirement if such a smart logistics network is to be implemented.
+*End-to-end encryption for IoT data with smart contract access controls*
 
-Ethical reasons
+The Internet of Things holds to promise of improving our collective awareness of the world.  Sensors are installed on web-connected devices that are being deployed or installed in places that have hardly been observed; even well-studied locations now are experiencing a greater density and frequency of empirical observation than ever before. Unlocking the information being captured for the public benefit is a moral imperative. This is an effort to understand technical, ethical, economic and political considerations in creating such a system.
 
-Legal reasons
+## Case Study: Smart Shipping Containers
 
-Commercial reasons
+Given the heterogeneity of the Internet of Things, this research effort will focus on exploring these considerations as applied to transport and logistics networks. The second half of the 20th century saw the rise of a standard unit of shipment: the twenty-foot equivalent unit (TEU). Shipping containers adhere to this standard, and compose a significant proportion of global goods transport. Designed for intermodal transport, shipping containers can hold goods as they move from origin - point of extraction or assembly - to destination - point of sale, including by sea, road, rail and, less frequently, air. (For more on this, see [The Box by Marc Levinson](https://press.princeton.edu/titles/10724.html)).
 
-Capturing the value contained in sensor data is the primary incentive for participants in the logistics network ecosystem to invest in smart container technology. Unless regulated to do so, firms compelled by a profit motive necessarily need to see the business case for such an investment. Improvements to operational efficiency may offer enough justification to forward-thinking or large actors in the space, but a clearer path to adoption would be to create new revenue opportunities, rather than increase profits by reducing costs. The clearest revenue opportunity created by investing in smart container technology is to monetize the data collected by these sensors.
+Improved situational awareness for stakeholders in the global transport supply chain would create numerous opportunities to improve system efficiency, potentially resulting in commercial and environmental benefits ([UN CEFACT Smart Containers White Paper 2019](http://www.unece.org/fileadmin/DAM/cefact/GuidanceMaterials/WhitePaperSmartContainers.pdf)). A transparent and reliable mechanism to ensure the security of the smart container's meta-information is a requirement if such a smart logistics network is to be implemented.
 
-This opportunity is constrained, however, by technical and business realities. Edge sensors are often highly constrained by intermittent or constrained bandwidth, and by limitations to computing capacity due to storage / memory or energy consumption. Further, datasets increase in value in a non-linear way with scale, provided accuracy (or at least precision). Potential customers of data will be willing to pay much more for datasets covering greater spatial and temporal extents, and of higher resolution.
+Capturing the value contained in sensor data is the primary incentive for participants in the logistics network ecosystem to invest in smart container technology. Unless regulated to do so, firms - compelled by a profit motive - will need to see the business case for such an investment. Improvements to operational efficiency may offer enough justification to forward-thinking or large actors in the space, but a clearer path to adoption would be to create new revenue opportunities, rather than increase profits by reducing costs. The clearest revenue opportunity created by investing in smart container technology - beyond  possibly up-charging for carrying freight monitored by sensors - is to monetize the data collected by these sensors.
 
-This final point is the strongest case for the establishment of and adherence to an industry-wide protocol (as referenced in the UN CEFACT white paper). By ensuring that data collected - even from a single sensor at a single point in spacetime - is interoperable with data collected by competing entities will improve the value of everyone's data.
+This opportunity is constrained, however, by technical and business realities. Edge sensors are highly limited by intermittent or low bandwidth, and by constraints to computing capacity due to storage / memory or energy consumption. It is infeasible to transmit all of the data collected by edge sensors to cloud servers, where they could be warehoused. Some blend of edge computing, aggregation and sampling will be necessary to retain the value of the information collected within the technical constraints of the system.
+
+Machine learning tasks often are most successfully performed on structured datasets, with cross-comparable observations. This forms the foundation of the case for the establishment of and adherence to an industry-wide protocol for smart container data (as referenced in the UN CEFACT white paper). By ensuring that data collected - even from a single sensor at a single point in spacetime - is interoperable with data collected by competing entities will improve the value of everyone's data. Larger players in the space will have much less incentive to do this, and to open their data, than smaller ones. Part of this enquiry will explore ways to incentivize participation, and / or spell out the case for regulating device owners to do so.
+
+The motivation is our understanding that the emergence of a network of connected sensors is creating at once immense opportunity and risk to issues of human and environmental justice. Smart container data could provide information about environmental conditions around the world at unprecedented levels. Such data, combined with machine learning methods (supervised classification, perhaps) might be used to detect illicit actors utilizing licit commercial logistics networks to traffic contraband or humans. And, questions surrounding the systems for observing shipping containers also apply to those surveilling public and commercial spaces - cameras, satellites, biometric devices, monitors of internet traffic / social networks, etc. These technologies offer the opportunity to improve societies' physical security through early detection of threats to public safety, but carry the risk of abuse by incompetent, unscrupulous or malevolent authorities.
+
+This is an informal outlet for the process that lies behind this research effort. We invite any questions, discourse or critique to our thinking, code, etc.
+
+
+- Privacy-preserving sensor data access control smart contracts
+  - On-chain mechanism for granting and revoking agents' rights to access information, and defining conditions.
+    - Identity
+    - Location
+    - Time
+    - Parametric conditions (temperature etc)

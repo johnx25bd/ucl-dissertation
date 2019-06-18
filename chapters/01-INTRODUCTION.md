@@ -32,7 +32,7 @@ Benet, Juan. Content addressing. Proof-of-storage.
 
 Nakamoto. [Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/bitcoin.pdf).
 
-Buterin.
+Buterin / Wood.
 
 DAO? FOAM? Sovrin.
 
@@ -40,7 +40,9 @@ DAO? FOAM? Sovrin.
 
 ## Concise problem statement
 
-Combination of privacy, scalability, accessibility. 
+Combination of privacy, scalability, accessibility.
+
+Coordination problem.
 
 ## Research questions
 
