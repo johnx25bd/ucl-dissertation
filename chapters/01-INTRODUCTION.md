@@ -1,3 +1,22 @@
+Intro Page
+
+"These ain't conflict diamonds -
+is they Jacob? Don't lie to me mayne"
+
+"Even though it's thousands of miles away,
+Sierra Leone connect to what we go through today.
+Over here that's the drug trade, we die from drugs.
+Over there they die from what we buy from drugs,
+the diamonds, the chains the bracelets the charmses,
+I thought my Jesus piece was so harmless,
+til I see a picture of a shorty armless
+and here's the conflict"
+
+
+Abstract
+
+
+
 # Introduction
 
 ## Frame ethical context.
@@ -11,6 +30,8 @@ Do machines have a right to privacy?
 
 
 ## Define key terms.
+
+
 
 Distinguish between physical and conceptual reality, and defend the need to treat them different for the purposes of this research.
 
@@ -34,7 +55,11 @@ Nakamoto. [Bitcoin: A Peer-to-Peer Electronic Cash System](https://bitcoin.org/b
 
 Buterin / Wood.
 
-DAO? FOAM? Sovrin.
+DAO? FOAM?
+
+West.
+
+Self-sovereign identities.  Digital identities of people; "digital identities of objects" (Dutch Blockchain Coalition). Sovrin.
 
 "Model-based Creation and Management of Evolutionary Information Systems (1.01.2010−31.12.2014)
 
@@ -42,7 +67,7 @@ DAO? FOAM? Sovrin.
 
 Combination of privacy, scalability, accessibility.
 
-Coordination problem.
+Coordination problem. Examples of pre-competitive coordination benefiting competing interests (Physical example: shipping container standards. Informational example?).
 
 ## Research questions
 

@@ -18,6 +18,13 @@ Wireless data transfer. Empirical sensors. Localization - GPS, FOAM. Asymmetric 
 
 Outline a feasible system for a distributed store of data collected by connected sensors, with access controls governed by a DAO.
 
+
+
+
+
+
+
+
 4. Agent-based models
 
 Implement, visualize and analyze the outputs of agent-based models designed to simulate the behavior of such a network of connected sensors operating at various scales, based on different governance schemes (single authority (centralized), oligarchic authority (private blockchain), decentralized, fractal federated).
