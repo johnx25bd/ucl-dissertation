@@ -1,30 +1,11 @@
-import random
-
 from mesa import Model
 from mesa.datacollection import DataCollector
 from mesa.space import Grid
+from mesa.time import RandomActivation
 
-from .schedule import RandomActivationByBreed
 from .agent import Sensor, Gateway, Cloud, Blockchain
 
-# Measuring utility of data from network:
-def compute_interoperability(model):
-    """
-    Compute the proportion of data adhering to
-    """
-    pass
 
-def compute_accuracy(model):
-    pass
-
-def compute_accessibility(model):
-    pass
-
-def compute_speed(model):
-    pass
-
-# Network loads
-# Transaction volumes
 
 class CentralizedArchitecture(Model):
     """
@@ -32,73 +13,7 @@ class CentralizedArchitecture(Model):
     client-server relationship
     """
 
-    def __init__(self, num_clouds, gateways_per_cloud,
-                sensors_per_gateway, height=100, width=100):
-        """
-        Create a new model with centralized database architectures.
 
-        """
-        super().__init__()
-
-        self.height = height
-        self.width = width
-
-        self.schedule = RandomActivationByBreed(self)
-        self.grid = Grid(height, width, torus=False)
-
-        self.datacollector = DataCollector(
-            {"Temperature": lambda m: self.retrieve_state_updates(m)
-            })
-
-        # self.agents_by_breed = defaultdict(dict)
-
-        for cloud in range(0, num_clouds):
-
-            current_cloud_id = self.next_id()
-            new_cloud = Cloud(current_cloud_id, self)
-            # self.grid._place_agent() # where do the cloud symbols go?
-            self.schedule.add(new_cloud)
-
-            for gateway in range(0, gateways_per_cloud):
-
-                current_gateway_id = self.next_id()
-                new_gateway = Gateway(current_gateway_id, None, 0, current_cloud_id, self)
-
-                # self.grid._place_agent((0, gateway ), new_gateway)
-                self.schedule.add(new_gateway)
-
-                for sensor in range(0, sensors_per_gateway):
-
-                    current_sensor_id = self.next_id()
-                    pos = (random.randint(0,width -1), random.randint(0,height -1))
-
-                    new_sensor = Sensor( current_sensor_id, pos, 10, current_gateway_id, self)
-
-                    # self.grid._place_agent(pos, new_sensor)
-                    self.schedule.add(new_sensor)
-
-
-
-
-    def step(self):
-        print("STEP:", self.schedule.steps)
-        self.schedule.step()
-        self.datacollector.collect(self)
-
-        # if self.duration <
-
-    @staticmethod
-    def retrieve_state_updates(model):
-        state_updates = {}
-        # # print(model.schedule.agents)
-        # for breed in model.schedule.agents_by_breed:
-        #     print(breed)
-        #     state_updates[breed] = {}
-        #     for agent in model.schedule.agents_by_breed[breed]:
-        #         state_updates[breed][agent] = model.schedule.agents_by_breed[breed][agent].state_updates
-        #     # recordings[sensor.pos] = sensor.recordings
-
-        return state_updates
 
 class PrivateBlockchainArchitecture(Model):
     """

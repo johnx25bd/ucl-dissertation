@@ -29,14 +29,16 @@ class Sensor(Agent):
 
     """
 
-    def __init__(self, unique_id, pos, sync_freq, model):
+    def __init__(self, unique_id, pos, sync_freq, parent_gateway, model):
         super().__init__( unique_id, model)
 
         self.agent_type = "Sensor"
         self.pos = pos
         self.unique_id = unique_id
         self.sync_freq = sync_freq
-        self.state_updates = []
+        self.parent_gateway = parent_gateway # agent id ...
+        actual = random.randint(0,100)
+        self.state_updates = {"actual": actual, "observed": actual + 2}
         self.records = []
 
     # def __init__(self, uuid, attributes, battery_life, storage, compute_power, schema, model):
@@ -61,13 +63,26 @@ class Sensor(Agent):
         self.records.append(self.state_updates)
 
         # Replace with new recordings
-        self.state_updates = random.randint(0,100)
+        actual = random.randint(0,100)
+
+        self.state_updates = {"actual": actual, "observed": actual + 2}
 
         if self.sync_freq < 1:
             if self.random.random() > self.sync_freq:
                 pass
         else:
-            print(self.model.schedule.steps)
+            if self.model.schedule.steps % self.sync_freq == 0:
+                print(self.records)
+                # self.transmit(self.parent_gateway, self.recordings)
+
+    def transmit(self, target_id, data):
+        self.model._agents[target_id].receive(self.unique_id, data)
+
+    def sync(self, requestor):
+
+        # Transmit data to server or gateway
+        # Store tick of most recent transmission to
+        self.last_transmission = self.model.schedule.steps
 
 
 
@@ -82,21 +97,36 @@ class Gateway(Agent):
         storage: The amount of data storage available on device in GB
     """
 
-    def __init__(self, unique_id, child_sensors, storage, model):
+    def __init__(self, unique_id, child_sensors, storage, parent_cloud, model):
         super().__init__(unique_id, model)
 
         self.agent_type = "Gateway"
         self.unique_id = unique_id
-        self.child_sensors = child_sensors
+        self.child_sensors = {}
         self.storage = storage
+        self.parent_cloud = parent_cloud
 
     def step(self):
         pass
+
+    def receive(self, origin_id, data):
+        self.child_sensors[origin_id].append(data)
+
 
 class Cloud(Agent):
     """
     A centralized data storage and computing environment
     """
+    def __init__(self, unique_id, model):
+        super().__init__(unique_id, model)
+
+        self.agent_type = "Cloud"
+        self.unique_id = unique_id
+
+
+
+
+
 
 class Blockchain(Agent):
     """

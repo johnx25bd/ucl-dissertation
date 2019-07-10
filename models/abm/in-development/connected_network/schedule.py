@@ -52,7 +52,7 @@ class RandomActivationByBreed(RandomActivation):
             by_breed: If True, run all agents of a single breed before running
                       the next one.
         '''
-        pprint (self.agents_by_breed)
+
         if by_breed:
             for agent_class in self.agents_by_breed:
                 self.step_breed(agent_class) # <-- does this run breeds in same order each time?
