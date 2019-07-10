@@ -7,6 +7,7 @@ from .model import CentralizedArchitecture, PrivateBlockchainArchitecture, Publi
 # Develop code here:
 
 
+
 # Deprecated, but retained for reference
 # COLORS = {"Fine": "#00AA00",
 #           "On Fire": "#880000",

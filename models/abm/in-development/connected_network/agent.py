@@ -1,5 +1,5 @@
 from mesa import Agent
-
+import random
 
 
 class Sensor(Agent):
@@ -8,35 +8,68 @@ class Sensor(Agent):
     processor and information transceiver.
 
     Attributes:
-        uuid: Universally unique identifier. Here, a randomly generated id.
+        unique_id: Universally unique identifier. Here, a randomly generated id.
             This could be a wallet address or public key, plus private key
         pos: An (x,y) tuple of the connected sensor's spatial position
-        attributes: The types of sensors connected to the device,
-            including "temperature", "moisture", "pressure",
-            "orientation", "light".
-        battery_life: The amount of battery available. If -999, the sensor
-            is considered to be connected to a stable power source.
-        storage: The amount of data storage available on device in GB
-            (i.e. SD card size)
-        computer_power: The processor speed in MHz
+        sync_freq: The frequency with which the sensor syncs with the cloud.
+            If n < 1.0, this is the probability of syncing on a given tick.
+            If n > 1, this sensor syncs regularly every n ticks.
+
+        # attributes: The types of sensors connected to the device,
+        #     including "temperature", "moisture", "pressure",
+        #     "orientation", "light".
+        # battery_life: The amount of battery available. If -999, the sensor
+        #     is considered to be connected to a stable power source.
+        # storage: The amount of data storage available on device in GB
+        #     (i.e. SD card size)
+        # computer_power: The processor speed in MHz
+        # schema: The format the data is collected in, to be used in measuring
+        #     interoperability
 
 
     """
 
-    def __init__(self, uuid, attributes, battery_life, storage, compute_power, model):
-        super().__init__(self, uuid, attributes, battery_life, storage, compute_power, model)
+    def __init__(self, unique_id, pos, sync_freq, model):
+        super().__init__( unique_id, model)
 
-        self.uuid = uuid
-        self.attributes = attributes
-        self.battery_life = battery_life
-        self.storage = storage
-        self.compute_power = compute_power
+        self.agent_type = "Sensor"
+        self.pos = pos
+        self.unique_id = unique_id
+        self.sync_freq = sync_freq
+        self.state_updates = []
+        self.records = []
 
+    # def __init__(self, uuid, attributes, battery_life, storage, compute_power, schema, model):
+    #     super().__init__(self, uuid, attributes, battery_life, storage, compute_power, schema, model)
+    #
+    #     self.uuid = uuid
+    #     self.attributes = attributes
+    #     self.battery_life = battery_life
+    #     self.storage = storage
+    #     self.compute_power = compute_power
+    #     self.schema = schema
+    #     self.recordings = []
+
+
+    # def transmit(self):
 
     def step(self):
         """
 
         """
+        # Add prior state update to database
+        self.records.append(self.state_updates)
+
+        # Replace with new recordings
+        self.state_updates = random.randint(0,100)
+
+        if self.sync_freq < 1:
+            if self.random.random() > self.sync_freq:
+                pass
+        else:
+            print(self.schedule.steps)
+
+
 
 class Gateway(Agent):
     """
@@ -49,11 +82,16 @@ class Gateway(Agent):
         storage: The amount of data storage available on device in GB
     """
 
-    def __init__(self, child_sensors, storage):
-        super().__init__(self, child_sensors, storage)
+    def __init__(self, unique_id, child_sensors, storage, model):
+        super().__init__(unique_id, model)
 
+        self.agent_type = "Gateway"
+        self.unique_id = unique_id
         self.child_sensors = child_sensors
         self.storage = storage
+
+    def step(self):
+        pass
 
 class Cloud(Agent):
     """
