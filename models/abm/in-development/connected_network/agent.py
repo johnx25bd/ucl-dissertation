@@ -4,7 +4,7 @@ import random
 
 class Sensor(Agent):
     """
-    An empirical sensor with batter, data store,
+    An empirical sensor with battery, data store,
     processor and information transceiver.
 
     Attributes:
@@ -67,7 +67,7 @@ class Sensor(Agent):
             if self.random.random() > self.sync_freq:
                 pass
         else:
-            print(self.schedule.steps)
+            print(self.model.schedule.steps)
 
 
 

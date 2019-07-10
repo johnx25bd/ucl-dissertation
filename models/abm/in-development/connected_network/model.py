@@ -67,8 +67,8 @@ class CentralizedArchitecture(Model):
             self.schedule.add(new_gateway)
 
     def step(self):
-        # print("STEP:", self.schedule.steps)
-        self.schedule.step(self)
+        print("STEP:", self.schedule.steps)
+        self.schedule.step()
         self.datacollector.collect(self)
 
         # if self.duration <
