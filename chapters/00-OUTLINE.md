@@ -6,13 +6,17 @@
 
 Cover page, Acknowledgements.
 
-1. Introduction
+1. Introduction + Literature Review
 
-Frame ethical context. Define key terms. Literature review. Concise problem statement. Research questions. Hypotheses. Outline approach.
+Frame ethical context.
+
+Define key terms.
+
+Literature review. Concise problem statement. Research questions. Hypotheses. Outline approach.
 
 2. Enabling Technologies
 
-Wireless data transfer. Empirical sensors. Localization - GPS, FOAM. Asymmetric cryptography - encrypt-decrypt, sign-verify. Hashing algorithms and usage (checksums, Merkle trees). Homomorphic cryptography. Proxy re-encryption. Trusted hardware. Blockchains and distributed ledgers. Smart contracts / EVM. Public blockchains (mainly Ethereum). Private blockchains (probably mainly Corda, possibly Hyperledger).
+Wireless data transfer. Empirical sensors. Localization - GPS, FOAM. Asymmetric cryptography - encrypt-decrypt, sign-verify. Hashing algorithms and usage (checksums, Merkle trees). Homomorphic cryptography. Proxy re-encryption. Trusted hardware. Blockchains and distributed ledgers. Smart contracts / EVM. Public blockchains (mainly Ethereum). Private blockchains (probably mainly Corda, possibly Hyperledger). Ricardian contracts
 
 3. Methodology: Concept / System Design
 
@@ -46,6 +50,8 @@ Propose DAO shepherds.
 6. Conclusion
 
 Quantum computing?
+
+Potential to prevent botnet DDoS attacks?
 
 Further Research:
 
