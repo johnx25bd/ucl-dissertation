@@ -1,6 +1,6 @@
 # Working DISSERTATION PROPOSAL
 
-
+"Self-sovereign sensors"
 
 An agent-based model to explore behavior of networks of connected sensors participating in a data economy.
 
@@ -17,7 +17,7 @@ A DAO as a data clearinghouse or broker.
 - Can submit key statistics of sensed attributes, and provide access to higher-resolution data upon request. i.e. Distilled information containing much of what is contained in the original dataset.
 - Measuring the effect of how proportions of dishonest reporting affects data accuracy.
 - Can we explore how variation in data collective governance models affects this? Which model is most robust against dishonesty?
-  - Siloed, not interoperable. No uniform data standard. 
+  - Siloed, not interoperable. No uniform data standard.
 - Why a DAO? Why blockchains? As reference points for uncoordinated firms / data providers - informational utilities. What other entity could coordinate all this data?
 
 

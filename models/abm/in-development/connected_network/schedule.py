@@ -1,5 +1,4 @@
 from collections import defaultdict
-from pprint import pprint
 
 from mesa.time import RandomActivation
 
@@ -13,9 +12,7 @@ class RandomActivationByBreed(RandomActivation):
     default behavior for an ABM.
 
     Assumes that all agents have a step() method.
-    From https://github.com/projectmesa/mesa/blob/master/examples/wolf_sheep/wolf_sheep/schedule.py
     '''
-
 
     def __init__(self, model):
         super().__init__(model)
@@ -30,8 +27,7 @@ class RandomActivationByBreed(RandomActivation):
         '''
 
         self._agents[agent.unique_id] = agent
-        agent_class = agent.agent_type
-        # print(str(agent_class))
+        agent_class = type(agent)
         self.agents_by_breed[agent_class][agent.unique_id] = agent
 
     def remove(self, agent):
@@ -52,11 +48,9 @@ class RandomActivationByBreed(RandomActivation):
             by_breed: If True, run all agents of a single breed before running
                       the next one.
         '''
-
         if by_breed:
             for agent_class in self.agents_by_breed:
-                self.step_breed(agent_class) # <-- does this run breeds in same order each time?
-                                             # I don't think so because it is not an ordered dict?
+                self.step_breed(agent_class)
             self.steps += 1
             self.time += 1
         else:
