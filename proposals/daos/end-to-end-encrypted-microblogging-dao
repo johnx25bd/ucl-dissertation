@@ -1,0 +1,12 @@
+
+
+IPFS hashes pointing to encrypted messages registered
+
+Accounts owned by wallet addresses - mapping (address => username)
+
+Users indicate who can view messages. Some proxy re-encryption mechanism to enable distribution to reader list
+- the time it will take to re-encrypt the first time you request a message ...
+
+If an address has view rights to a message it is re-encrypted for decryption with their private key and transmitted to the browser
+
+Cannot access the 

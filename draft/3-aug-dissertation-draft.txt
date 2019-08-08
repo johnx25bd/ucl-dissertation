@@ -1,0 +1,336 @@
+﻿Masters Dissertation
+Spatial Data Science and Visualisation
+UCL Bartlett Centre for Advanced Spatial Analysis
+2018 - 2019 Academic Year
+
+
+John R Hoopes IV
+
+
+Sovereign Sensors: Investigating governance of the informational commons in the web3 era
+Introduction - 2000 words
+
+
+Context. Ethics. Opportunity. Risk.
+* Orienting values: maximize depth, minimize violence, harm, damage. Align system values with users’ values. Democratize system design and development to mitigate the principal-agent problem.
+* The importance of finding consensus on reality to achieving values
+   * When it is inappropriate to seek consensus - opinion
+   * When it is appropriate, and why it is valuable
+
+
+Core assertion: Thoughtfully transitioning to a web3 paradigm could unlock much of the potential of the internet and mitigate many of the risks. Crucially, public key cryptography and self sovereign identities enable a profound decentralization of power and value to the edges of the network - the people, machines, and organizations that interact in the informational (and physical) space.
+
+
+Value is now stored as information, along with as material objects and substances. Historically, humans have used some objects as tools, to help them navigate reality and improve chances of survival - of procreation. Initially the utility of the tool was (presumably) its primary source (repository?) of value - more useful tools (objects) were sought after and useless ones discarded, valueless. Over time, however, humans began to ascribe meaning to these objects - they began to exist more fully in the conceptual space (which is at once individual and shared). Perhaps the object was inscribed or painted with something, some symbols representing the number of children maybe, or the cycles of the moon. 
+
+
+What the object was made of usually contributed to its utility (and therefore value). Some substances began to be interpreted based on things other than their utility, on a cultural perception, acquired through interaction with other informational entities (in our case - pre history or perhaps dawn of history - other humans. Now including computers.) The meaning ascribed based on the constituent substance (say gold) was its initial source of value. It could be that before humans developed the ability to smelt gold, they would still carry around pieces - nuggets and dust - to offer in exchange for something another human had, that you wanted. Each piece was unique as it was created - formed - and if two of these early sentient animals both had the same substance, they might compare them and establish who had more, or if they reckoned them equal. Obviously this is pure speculation - nothing was there to record this - but the point is to imagine the uniqueness of units of value.
+
+
+So yes, in the pastoral Mediterranean - inland probably - people are accumulating and trading these heterogeneous units. Then one day someone comes with a piece that is peculiar. It is not a nugget like you’ve seen - there is an image formed on it - the head of a man, some markings, characters. 
+
+
+I could imagine many people thought (felt? discerned?) that the first heads stamped on coins were gods, just as I would think the gods built the architecture in Egypt and the Mediterranean - or Cambodia and China. This is a sort of value different to the intrinsic value of the material: conceptual value. This object is now identified with some image in my mind, a conception of what is symbolized by it. I never saw the Roman emperor - he was thousands of arduous [units] away from where I spent my entire life living and working, surviving and transacting with money stamped with his image - but in my mind, based on this image and what others told me, perhaps other images I’d seen, I have a conception of the emperor of Rome and the power he has to establish a unit of value that is equal to the other instances of its class. This is fungibility - the first mass adoption of the notion of sameness. Sameness does not exist in the physical space. 
+
+
+Information can contain value
+
+
+Information is how our experience enters our awareness. Physical data strikes our bodies and is interpreted (somehow - the exploration of how is well worth further effort … somehow the spatial configuration over time of the light and sound (mainly - or physical haptic input or taste, which has not been successfully encoded in binary) as it strikes our body - and especially our retinas - is absorbed and, if perceived, interpreted. Interpretation appears to be subsequent to perception, and perhaps cannot exist without it - a necessary but not sufficient precondition. ). Information appears to be infinite, at every point and everywhere for all time. It exists in a context different to physical reality, a context that abides by different rules, and principles. This is the conceptual space - the realm of our interpreted experience, our … well, perhaps everything really. Objectively we exist - we have bodies. We can direct their action, We do this physically, mentally and emotively, and in different combinations of the three. Action can arise spontaneously, subconsciously, or through intentional effort, a directing of ones attention toward the intended outcome, discernment of the steps required to achieve the outcome, an analysis of the cost in effort and the value of the reward, and decision on whether or not to engage in the effort to bring about this intended outcome. Most of that takes place in the conceptual space. Sure we could argue that it comes down to the configuration of neurons firing in the brain - and I’m sure it does - but this paper is in part an exploration of what it would mean if we relaxed our materialist dogma and considered that as scientists we should adhere to occam’s razor. If your position is that it is simpler to explain this as the configuration of photons of different wavelengths activating patterns of rod and cone photoreceptor cells which trigger patterns of neuronal events that in aggregate yield insight as a electrochemical reaction or sequence of events then you may find this paper absurd and worth disregarding. We ask you to suspend your disbelief for an evening and ask what if … what if the soul existed. What if the noosphere is real, and behaves according to rules we can understand. Could we begin to manipulate the conceptual space to serve our collective needs and increase our well being, as defined by us? Is this not already happening, except controlled by an elite few with the knowledge and connections and capital to build systems that _____ people for their benefit? We cannot excoriate these people, because we are them. We are all in positions of privilege, and we all abuse our privileges sometimes. Relative privilege is another conversation (something that as a cis straight white male from America I cannot begin to suggest I should lead), but local privilege exists. It is why it may not be just to compare lives and hardships so critically. Everyone has moments of joy and despair, and everyone’s are valid. Argue about the values underlying the response, ok, but the shared experience is irrefutable. 
+
+
+The notion, currently, is that if it is legal it is moral and just. So long as ones actions fall within the bounds of what the law permits (and this is interesting - how do we characterize actions like that? Surely the legality of an action is something that exists primarily in the conceptual space. Actions also require some manipulation of physical reality, even if it is merely a thought - sometimes thoughts are the most powerful actions. Certainly if the thought motivates positive action
+
+
+
+
+So we have established the existence of physical and conceptual objects. (It is worth noting that it appears that conceptual objects do require something physical to be stored or occur or something … but yes it appears that without the physical the conceptual does not exist - or at least does not manifest. It exists - it always exists, along with all knowledge within it - but it takes sentience to manifest it. 
+
+
+
+
+Laws
+
+
+Without a perceiving awareness the conceptual does not manifest. And with one it does - to the depth that the awareness perceives.
+
+
+Our experience is at once internal and external - by which I mean physical and conceptual (which includes introspective, emotive, etc as well as mental). Information strikes the exterior of our bodies - if we seek to (i.e. pay attention) we can absorb it in a way that we can perceive and interpret it, the way by which it becomes knowledge in our memory. 
+
+
+So information is how the meaning contained within the universe is conceived of by informational entities. It only exists for an instant, between being data and being knowledge. The data has to be transmitted from a source - the informer. Upon transmission (which can be active - intentional - or passive - just a result of light or sound (air pressure) bouncing off it as it exists in space) it is just data traveling through space carried on a signal - which is, again, typically a light beam or the microvariations in air pressure that we interpret as sound. These are two very interesting phenomena worth investigating. Easier: light (though it may get harder in a moment). The relative position of photos of different wavelengths traveling through space such that they strike your retina at the same instant carries most of the information coming into our bodies. To ask how much information it carries is to fail to grasp the infiniteness of information, perhaps comparable to enquiring as to the length of the British coastline. A pixel is a conceptual object that is ascribed a value - three values in fact, which together enable to projection of an effectively continuous spectrum in the color of light. Infinite information strikes every pixel’s sensor in every photograph that is taken - and that is just what is coming from that direction. I would have a hard time believing is someone “proved” that the conceptual space - or even information - is finite. 
+
+
+So apparently as we exist in the universe, a universe exists within each of us, which includes our conception of the exterior universe along with everything else we deal with in our day to day. This interior universe is the realm of the attention, a most peculiar capability of ours, our ability to focus on an object in our awareness (and if you think ‘objects’ - that collapses into a system or constellation of objects, which is an object). 
+
+
+Layers of conceptual reality
+Wilber
+  
+
+
+
+  
+
+
+
+http://www.kheper.net/topics/Wilber/Wilber_IV.html
+
+
+
+
+Examples of conceptual objects
+
+
+Sameness
+
+
+An action
+
+
+The letter “Q”
+
+
+Objects
+
+
+Groupings
+
+
+
+
+
+
+
+
+Examples of physical objects
+
+
+
+
+
+
+So what is an object? 
+
+
+It is a manifestation in space. 
+Physically it could be the key 
+Conceptually   conception of an entity
+
+
+
+
+
+
+Relevant Domains.
+* Private sector.
+   * Insurance
+   * Logistics and transport
+   * ...
+* Government.
+   * Sovereign coordination 
+Literature Review 
+Objects exist in space. Some objects are imbued with innate agency - the ability to take action, often in response to some perceived environmental stimulus. This is the basis of life and evolution: living beings (which are objects) are required to consume resources to replenish their depletion, resulting from action[a]. 
+
+
+Objects fall into two categories, determined by the spaces in which they exist. Physical objects are composed of matter and energy. Each physical object is unique, and is a holon: it is at once composed of constituent parts (objects of their own), and composes part of a superior containing object (Wilber). Discernment of the boundaries between ‘object’ and ‘not object’ depends on the discerner; ultimately one physical object exists that contains all others - the Universe.
+
+
+Conceptual objects exist in the conceptual space, and are much less well understood. A full exploration of the nature of conceptual reality is beyond the scope of this research effort, but it is worth pointing out a few characteristics to aid in the definition of terms to follow. Conceptual reality exists in the minds of perceiving entities, and is composed of the very real - but ephemeral - objects existing within our awareness: thoughts and ideas, concepts, symbols, feelings, structures, patterns, values.
+
+
+Perhaps the crucial difference between physical and conceptual reality is the impossibility of sameness in the former. Sameness - similarity - is an interpreted quality, as understood by a perceiving awareness. Identifying similarity is critical to successfully navigating the environment, to survival, and to coordination, but to mistake conceptual sameness with physical sameness is a fallacy that betrays an inadequate understanding of the nature of reality. The importance of this distinction will become apparent as we investigate the research topic.
+
+
+While a thorough investigation of the relationship between physical and conceptual reality is beyond the scope of this initiative, it appears that the conceptual layer to reality - or at least its discernment - arises atop the physical layer. Teilhard de Chardin described this as the “noosphere”, the layer of understanding enveloping the Earth, having arisen from the biosphere, layered atop the geosphere or physiosphere. An apparent hierarchy can be understood by conceiving of the destruction of an entire layer, and the effect of that destruction on the other layers. If the biosphere (all life) was destroyed, the physiosphere would remain, but the noosphere would not. If the physiosphere were destroyed both the biosphere and noosphere would cease to exist.
+
+
+Information 
+
+
+The intentional framing of this research in the context of these two aspects of reality serves to 
+
+
+Distinguishing between the physical and conceptual aspects of reality is required to 
+
+
+While it appears that this position adheres to the dual-aspect monism school of philosophy of mind (wikipedia?), these observations are formulated on the basis of direct experience rather than study of philosophical arguments posited by others. Further, it is informed by enquiry into the emerging field of computing, which operates at the interface of physical and conceptual realities. 
+
+
+
+
+The relationship between matter and meaning
+
+
+
+
+
+
+
+
+WHY does this matter? 
+
+
+Data = physical
+Information = conceptual
+
+
+
+
+The physical commons.
+
+
+The informational commons. 
+
+
+If we can share 
+
+
+
+
+Much as cooling water reaches a point at which its molecules become ordered and aligned, a similar phenomenon might occur as we near saturation of information transfer between sentient (i.e. able to perceive and respond to information) entities in the physical/informational space. If understanding improves, entities are less likely to act in a way that would disrupt another's intentions; given that agents can adapt their intentions, deconfliction of behavior may be possible.
+
+
+Examples of objects in the physical vs conceptual space
+Physical vs conceptual
+* The illusion of sameness in the physical space
+* The importance of sameness in the conceptual space
+* Data and information
+Communication
+* Messages, channels, signals, data and information
+* Digital vs analogue. Our focus on digital.
+Computing
+* Processing data.
+* The frontier: trusted computing.
+Networked Computing
+* Origins
+* Web1, Web2, Web3
+* The Evolution of the Stack
+
+
+Cryptography
+* Privacy on an open network. The advantages of a technical solution.
+* Why is privacy important? Antonopoulos - privacy is the wellspring from which all other civil liberties emerge.
+* HTTPS and the problem it solves
+* Hashing and the problem it solves
+   * Message integrity
+   * Low cost confirmation of sameness
+* Asymmetric key ciphers and the problems they solve
+   * Message authenticity
+Blockchain and DLTs
+* What problems do they solve? 
+   * Persistence
+   * Accessibility
+   * Antifragility
+* What opportunities might they represent? 
+* What are the costs?
+* Bitcoin
+* Ethereum
+* Hyperledger
+* Corda
+
+
+With blockchain the responsibility of maintaining and updating the records that form the basis of an informational system (financial or otherwise) is given to the public, instead of to a trusted authority.
+
+
+Now these informational entities - a registry or ledger - are global. << Example of company registries and the problem of shell corporations, built on a time when information was bound by physical spatial constraints. Now information is effectively global.
+Self sovereign identity and decentralized public key infrastructure
+
+
+Governing the informational commons
+* The inverse tragedy of the commons
+
+
+Concept + System Design - 3000 words
+
+
+Enabling Technologies 
+
+
+Connected Sensors
+
+
+Trusted Hardware
+
+
+Smart Contracts
+
+
+Critical Differences
+* Sign at edge. Resource costs
+* Costs of writing and computing on the (public) blockchain
+Quantitative Investigation - ABM - 4000 words
+
+
+Problem Statement + Motivation
+
+
+Research Question
+
+
+Hypothesis
+
+
+Methodology
+
+
+Results
+Parameters to sweep:
+* Number of sensors
+* Sync Frequency
+* Data volumes
+* Stochasticity levels
+
+
+Measured variables:
+
+
+At each tick:
+* Gwei spent
+   * Descriptive statistics of gwei spent per agent
+   * Informational currency
+      * Of each agent, and across model run
+      * Moving window? Or full history?
+
+
+At model run end:
+* Network life cycles
+   * Descriptive statistics of agent lifespans for each model run
+   * Agent-level measures? 
+* Mining times
+   * Descriptive statistics of mining times for each model run
+   * Gwei spent
+      * Descriptive statistics of total gwei spent per agent
+   * Informational currency - by agent and across network
+      * Moving window? Or full history?
+
+
+
+
+Visualizations:
+
+
+At agent level (for specific model runs):
+Gwei costs over time
+Battery usage over time
+Informational currency over time
+
+
+Clustering based on multiple dimensions? What would this tell us? 
+Principal component analysis based on clustering? 
+
+
+
+
+Discussion
+
+
+Conclusions - 1000 words
+Social, Political and Economic Barriers
+
+
+Design Considerations
+
+
+Ricardian Treaties
+[a]not relevant maybe
