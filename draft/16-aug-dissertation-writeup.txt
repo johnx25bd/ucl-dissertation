@@ -1,0 +1,396 @@
+﻿Research question and hypotheses
+
+
+Methodology
+An agent-based approach was employed to investigate the dynamics of sensor networks connected to a public blockchain. As the scale, resolution and connectivity of the Internet of Things, so does its potential to improve situational awareness (cite - growing IoT). If leveraged properly, enormous systemic efficiency gains could be uncovered by a more accurate understanding of system patterns and dynamics - with substantial social, environmental and commercial implications. As stated, public blockchains have unique limitations when compared with traditional database management systems and private distributed ledger implementations; this modeling effort was conducted to explore the emergent dynamics of connected sensor networks reporting edge measurements to a public blockchain. By understanding these dynamics and the trade-offs inherent to using public and permissionless blockchain architectures, system designers can take a more informed approach to designing such systems, thereby balancing the costs and benefits of decentralization.
+
+
+Using python’s Mesa framework (Mesa 2019), two subclasses inheriting Mesa’s `Agent` class were defined: `Sensor` and `Blockchain`. A `SensorBlockchainNetwork` subclass of Mesa’s `Model` class served to instantiate an individual simulation, configure model schedulers and collect data from model reporters. Parameter sweeps were performed using Mesa’s BatchRunner tool; collected data was analyzed and visualized within iPython notebooks using the numpy, pandas, statsmodels and seaborn packages. 
+Agents
+Sensors
+Sensor agents represented edge devices capable of recording empirical data about their surrounding environment. Logic designed to simulate on-device data computation and transmission operations was included within the class definition as methods; each Sensor object 
+Upon data capture, each sensor submitted 
+
+
+Blockchains
+Blockchain agents were designed to simulate key features of Turing complete public, permissionless blockchains, with Ethereum serving as the primary inspiration. These information management systems are characterized by nodes executing programs developed in adherence to a protocol, which strictly defines computational behavior - the so-called “transactional singleton machine with shared-state” (Wood 2019). While deep discussion of the technical aspects of how a network of computing nodes reliably and rapidly establishes consensus on database state, the Blockchain class defined for the model here resembles the Ethereum Virtual Machine (EVM) (cite). 
+
+
+For the agent-based model developed, the focus was placed on the gas costs associated with writing data to the blockchain. No on-chain compute operations were simulated. If the public blockchain is thought of as a universally- and persistently-accessible informational utility, updating the distributed ledger with data collected by sensors measuring conditions at the network’s edge would provide data access to those seeking it. 
+
+
+In the Blockchain Agent subclass, attributes including the gas limit per block and gas cost per byte written (both in gwei)  were defined upon initiation. These integer values were fixed both through a single model run (unlike in Ethereum, in which block gas limits are adjustable (Wood? Yellow paper)) and across model runs. While the dynamic nature of these parameters are critical to the adaptability and scalability of blockchain systems, these models focused on variation in the size and behavior of the networks connecting to the blockchain in each model run.
+
+
+Class methods defined allowed for the blockchain (or, more accurately, blockchain’s virtual machine - BVM, perhaps) to perform necessary actions, including adding submitted transactions to its mempool (`Blockchain.add_to_mempool(tx)`), calculating costs of write operations (`write_data(num_bytes)`) and mining a block (`mine_block()`). The latter method included logic to select the highest value and most recent transactions from the mempool, validate them (including invocation of that appropriate sensor’s `confirm_tx(tx)` method) and update blockchain state. 
+
+
+Model
+Instantiation
+Scheduling
+For each model run, a single Blockchain agent was instantiated.
+Data Collection
+
+
+Gwei spent: In this middle-range model “gwei” is simply borrowed from the Ethereum lexicon; it represents a theoretical cost, and should not be thought of in terms of value in fiat currency. Rather than attempt to estimate true costs, this dimension was modeled in an effort to understand trends in total transaction costs per sensor across the parameters swept. 
+
+
+Informational currency: Much of the value of awareness-enhancing networks is gained by its provision of timely information to system users. Calculation of mean informational currency for each iteration excluded the warm-up period of 30 ticks. The metric quantified the proportion of data captured at the edge reflected on chain, having completed the full process of recording the data, transmitting a transaction, and that transaction being validated through mining. To 
+Execution
+Each tick represented a block validation by the consensus network maintaining the blockchain, during which the blockchain’s state was updated to incorporate data included in each transaction mined. 
+Number of ticks
+Parameter Sweeps
+* Fixed parameters
+* Each sweep
+* Number of iterations at each sweet - computational costs
+
+
+Results
+Analysis of data captured during model runs revealed interesting system dynamics, though questions remain regarding whether the patterns observed reflect system operation in reality. 
+
+
+This investigation sought insight into the effects of three independent variables on three independent variables. Each IV-DV pair will be reported, with extra attention paid to interesting and unexpected behavior. 
+
+
+Network size
+The network size was defined as the number of sensors submitting transactions to a blockchain. Model simulations were executed ranging from 50 to 500 sensors, on intervals of 50. 
+
+
+Mining dynamics
+A positive relationship between network size and mean transaction mining times per transaction was observed: larger networks tended to validate transactions more slowly. For each model run, a mean mining time was calculated by averaging the difference between block submitted and block mined for all transactions. 
+
+
+Table : Summary statistics, Mean mining times per transaction across network size parameter sweep
+
+
+n
+	30
+	Mean
+	47.34600
+	σ
+	33.75534
+	Minimum
+	1.00404
+	Median
+	46.59344
+	Maximum
+	95.18947
+	
+
+The observed mean mining times exhibited a positive correlation (Pearson’s correlation coefficient r_xy = 0.971728). It stands to reason that this correlation is due to the block gas limit, which fixes a limit on the amount of data the network can write each tick. Transactions each specified the same gas price, and data capture volumes and transmit frequencies were homogeneous across sensors, so network size directly correlated with the volume of transactions being submitted to the virtual machine for validation. Because blocks have a fixed limit to the gas that could be consumed - here, the amount of data to be written - in larger networks generating more data, transactions will take longer to be validated. 
+
+
+ An ordinary least squares simple linear regression analysis was conducted to produce a line of best fit modeling the relationship between network size and mean mining times.
+
+
+Figure : The effect of network size (number of sensors) on mean mining time per transaction (in blocks)
+[insert figure here]
+
+
+Caption: 
+
+
+While the correlation coefficient indicates a strong positive correlation between the variables considered, the residual errors do not appear to be normally distributed, calling into question the validity of the line of best fit calculated using OLS simple linear regression. 
+
+
+Curiously, the observed values at a network size of 200 breaks with the trend established in smaller network sizes; mean mining times were, on average, less than half of the values observed in sensor networks of 150 sensors. It is unclear if this break in the otherwise consistent positive relationship between the two variables is due to some quirk of the model or true emergent behavior of these systems interacting in reality; the former seems likelier, but without a dataset to validate observations from the simulation this is difficult to assess.
+
+
+Visual inspection of the scatterplot suggests the possible subsequent establishment of a new, convex positive non-linear relationship for networks of 200 or greater sensors. Further investigation of the nonlinear effects of transaction volumes on mining dynamics is warranted, but beyond the scope of this investigation. 
+
+
+Gwei spent
+The mean gwei spent per sensor was calculated for each model run to gain insight into the effects of network size on financial costs to system participants. Transaction costs disincentivize malicious or wasteful behavior; the higher marginal costs represent a primary way public blockchains differ from traditional data storage and cloud computing resources.
+
+
+Table : Summary statistics, Mean total gwei cost per sensor across network size parameter sweep
+
+
+n
+	30
+	Mean
+	10.44038
+	σ
+	0.64924
+	Minimum
+	9.67701
+	Median
+	10.27899
+	Maximum
+	11.73449
+	
+
+
+
+
+
+Figure xxx: Network size (number of sensors) against mean gwei spent per sensor per block
+
+
+Figure xxx depicts mean gwei spent per transaction across the network sizes modeled; a concave negative non-linear relationship is clearly seen. 
+
+
+Plotting the log of network size against gwei spent per sensor per block yielded an apparent negative linear relationship. An OLS simple linear regression analysis produced a model with an R-squared value of 0.9938, indicating that the network size strongly predicts mean gwei spent per sensor. Figure xxx visualizes the scatter plot of the transformation and the calculated line of best fit. 
+
+
+Figure xxx: Log of network size (number of sensors) against mean gwei spent per sensor per block
+
+
+Figure xxx: Residual errors vs predicted gwei spent per sensor per block
+
+
+Visual inspection of the residual errors plotted against predicted values based on the model, however, shows that the errors are not normally distributed, invalidating the OLS simple linear regression as a method for assessing the significance of the relationship between the variables. Still, the negative relationship between the variables is irrefutable. 
+
+
+As with mining dynamics, the decrease in gwei spent per sensor per block observed with increasing network sizes is caused by the static block gas limit. As the number of sensors attempting to submit data to be stored on chain increases, the likelihood of each sensor's transactions being validated, contained data being written, and gas costs incurred, decreases. Costs in gwei are only deducted from the sensor's externally owned account upon transaction validation. 
+
+
+Oddly, in model runs with networks larger than 150 sensors, mean gwei costs per sensor were the same across the three iterations executed at each network size simulated, while some, albeit minor, variation was observed in smaller networks (Table xxx). Due to the inclusion of the stochasticity metric, as well as a probabilistic record frequency value, this was not expected. Regardless, it almost certainly is a quirk of model design and not an indicator of actual system behavior. (***interpretation?***)
+
+
+Table xxx: Standard deviation of mean gwei spent per sensor per block across identical model runs
+Network size (sensors)
+	σ - mean gwei / sensor / block spent across iterations
+	50
+	0.014425
+	100
+	0.000423
+	150
+	0.000339
+	200
+	0.0000
+	250
+	0.0000
+	300
+	0.0000
+	350
+	0.0000
+	400
+	0.0000
+	450
+	0.0000
+	500
+	0.0000
+	
+
+
+
+Informational currency
+Interesting and unexpected patterns of network informational currency were observed across the parameter space - and across the time series of individual model runs. A linear negative correlation between network size and mean informational currency values was expected, as was stationarity within model run time series plots. While the pattern expected was observed across model runs, this was not the case within individual iterations. 
+
+
+Time Series
+Figure xxx depicts time series plots of mean network informational currency by tick for each of the model iterations recorded, colored by network size. In the smallest networks (50 sensors), informational currency rapidly rose in early ticks and - prior to tick 30, at which point older blocks were excluded from the measure calculations - reached a maximum value of > 0.9. 
+
+
+Table xxx: Summary statistics, Mean informational currency of 50-sensor networks (t > 30)
+n
+	270
+	Mean
+	0.911018
+	σ
+	0.011579
+	Minimum
+	0.87778
+	Median
+	0.91111
+	Maximum
+	0.93978
+	Caption: Summary statistics for mean network informational currency measured at each tick.
+
+
+After the warm-up period for these 50-sensor networks, mean network informational currency was a stationary process, as evidenced by Augmented Dickey-Fuller test results (Table xxx). Due to p-values of < 0.05, the null hypothesis is rejected: these time series do not have a unit root, and are stationary. 
+
+
+Table xxx: Augmented Dickey-Fuller test results, mean informational currency over time for 50-sensor networks
+
+
+Iteration
+	ADF Statistic
+	p-value
+	1
+	-7.2910
+	< 0.05
+	2
+	-5.3041
+	< 0.05
+	2
+	-6.3199
+	< 0.05
+	
+
+Networks larger than 50 sensors exhibited unusual behavior: after achieving a maximum mean informational currency after warm-up, the measures decayed over time until a threshold was reached, at which point the process became stationary. The greater the maximum measured value, the slower the decay rates to the floor threshold. Specifically, ~0.5 appeared to serve as a threshold support level; any networks that exceeded this mean currency receded to this point over time, then achieved stationarity there. Networks of 100 and 150 sensors exhibited this behavior. In networks of 250 or more sensors, which did not achieve a mean informational currency of >= 0.5, after the initial 30-tick warm-up period the measure diminished, ultimately receding to 0. The closer these larger networks got to this threshold level, the longer it took for them to recede to 0. 
+
+
+The eventual establishment of stationary processes around these threshold mean informational currency levels was unexpected; it is again unclear if these behavior patterns are due to a quirk of model design or represent a valid emergent dynamic of these complex systems. The decay in the measurements is likely due to the blockchain block gas limit: if more data is being generated each time step than can be recorded on the ledger, and because mining prioritizes earlier transactions over more recent ones (given equal gas costs) (cite line in python script), transaction mining times will increase as the number of unvalidated transactions in the mempool grows. Higher mining times and lower informational currency measures can be attributed to the common cause of block gas limits. 
+
+
+However, the threshold mean informational currency of 0.5 observed in smaller networks remains unexplained. Despite thorough review of model source code, no obvious point causing such behavior was found. Further investigation into this unexpected emergent dynamic would help to identify its cause, and to understand if it represents a result representative of actual system behavior or simply a quirk of model design. 
+
+
+*** Could add analysis here of slope of lines decaying to threshold / 0 based on network size … if we have time and space ***
+* Identify transition from stationary to non-stationary processes
+* Verify with ADF tests of time series subsets
+* Perform linear regression on non-stationary segments
+* Compare regression coefficients across network sizes; comment on effects of network size on slopes
+
+
+
+
+Recorded Data Volumes
+Empirical sensors operating at the edge record data representing some quality of their environment; the information contained in these data has value to other informational entities seeking insight into conditions in the vicinity of that sensor. Given the high costs of storing data on a public blockchain, a sweep of the quantity of data in bytes captured in each edge recording was performed. Here the effects of changes in data volumes recorded in each observation on the dependent variables of mean transaction mining times (in blocks), financial costs (in gwei) to each sensor and network informational currency are analyzed. 
+
+
+Mining dynamics
+A positive relationship between data volumes recorded per observation and mean transaction mining times is visible in Figure xxx: as sensors capture more data per observation, transactions tend to take longer to mine (Pearson’s correlation coefficient = 0.74258). Excluding two outliers, for which mining times exceeded the Tukey fence of 18.567, a Pearson’s correlation coefficient of 0.78448 was calculated. Summary statistics for the sample excluding outliers
+
+Summary statistics: Mean transaction mining times across edge record volumes parameter sweep
+
+
+
+
+Statistic
+	Value
+	n
+	76
+	Mean
+	7.8928
+	σ
+	3.9433
+	Minimum
+	1.0010
+	Quartile 1
+	5.9778
+	Median
+	7.8253
+	Quartile 3
+	10.712
+	Maximum
+	16.535
+	
+
+
+
+
+
+(REMOVE? - Visual inspection of the plot of record volumes against mean transaction mining times reveals a heteroscedastic distribution: as record volumes increase, variation in observed mining times increases as well. This “cone” shaped distribution means that residual errors from an OLS line of best fit will not be normally distributed. However, rather than testing the significance of the relationship, an OLS simple linear regression was performed to calculate the slope of the trendline.)
+
+
+Figure xxx: Sensor data capture volumes (bytes per recording) against transaction mean mining time (blocks)
+
+
+Caption: 
+
+
+Figure xxx: Mean mining time residual errors versus values predicted from OLS simple linear regression
+
+
+Figure xxx: Distribution of residual errors of mean mining times
+
+
+Figures xxx depict the plot of record volumes against mean transaction mining times with the line of best fit. The calculated R^2 value of 0.61541 indicates that the independent variable accounts for ~61.5% of the variance observed in the dataset. Visual inspection of Figures xxx and xxx suggest that residual error is normally distributed; because the p-value calculated is less than the significance level of 0.05, we fail to reject the null hypothesis. The mean mining time increased by 0.02051 blocks for each additional byte of data recorded per sensor observation. 
+Gwei spent
+As Figure xxx shows, record volumes had an unusual effect on gwei spent per sensor. At smaller record volumes, the financial expenditures rose rapidly with the independent variable, quickly leveling off between 350000 - 400000 gwei spent per sensor. These mean recordings appeared to begin to decrease as record volumes approached 241 bytes, at which point two highly uniform segments of data are seen. 
+
+
+First, in model runs simulating edge recording volumes of 241 - 321 bytes, a very strong positive linear correlation is observed (Pearson correlation coefficient: 0.99997). Figure xxx depicts this segment of the sample, including the OLS line of best fit - note the R^2 value of x, indicating that x% of variance is explained by the independent variable. 
+
+
+Figure xxx: Data capture volumes (241 <= bytes <= 321 ) against mean gwei spent per sensor
+
+
+
+
+Between 321 and 341 bytes per record, average gwei expenditures drop dramatically and begin another, less steep upward trend, also a positive linear correlation (Pearson’s correlation coefficient = 0.99999) which continues to the end of the parameter sweep. This segment of the sample is shown in Figure xxx; an R^2 value of xx indicates that this positive linear relationship is very strong.
+
+
+Figure xxx: Data capture volumes (341 <= bytes <= 501 ) against mean gwei spent per sensor
+
+
+While these results are interesting, it seems unlikely that these near-perfectly correlated relationships are due to something other than an unintended aspect of model design. As such, these results are determined to be not useful to this investigation into the dynamics of a scaling blockchain network. 
+
+
+(If time - look at Segment 0 - prior to perfect linear segments)...
+
+
+
+
+Informational currency
+As record volumes increased, informational currency was expected to decrease, due to limitations in the amount of data that could be written to the blockchain each tick - the block gas limit. As shown in Figure xxx, this was observed: after the warm-up period, in each model iteration a mean level of informational currency was established. Variations around this mean are explained by introduced stochasticity and the probabilistic transaction transmission frequency. 
+
+
+Figure xxx: Informational currency over time across a range of data capture volumes
+
+
+Calculating mean informational currency values for each model run (excluding the warm-up period) enabled the visualization of the effects of data capture volumes on the stable informational currency levels depicted in Figure xxx (time series). A non-linear negative relationship is visible - perhaps a sigmoid curve. Interestingly, as the curve approaches its lower horizontal asymptote at IC ~= 0.2, a point is reached between 321 and 341 bytes per record where the dependent variable drops to a new stable level of ~ 0.09. The cause of the measured values dropping at this threshold is unclear.
+
+
+(***If time and space: investigate temporal autocorrelation of informational currency***)
+Sensor observation frequency
+Sweeping the frequency with which edge sensors recorded empirical observations about their environment was intended to yield further insight into the effects of network activity on blockchain behavior. 
+
+
+Initial examination of results obtained from sweeping record frequencies using fixed parameters as in other independent variable sweeps, it was evident that the model behaved predictably up until near the limit of the sweep. Notably, with fixed network sizes of 20 sensors, the maximum gwei spent per sensor per block of 390000 meant that the block gas limit of 9000000 gwei was never reached. 
+
+
+Since these models were intended to simulate the challenges blockchains might encounter while scaling, and block gas limits are one of the primary constraints to network scalability, the parameter sweep was performed after doubling the number of sensors simulated in each iteration. In these sweeps, block gas limits were reached in the median swept values, enabling the analysis of model behavior as the network transitioned from underutilized to oversubscribed. This is noteworthy because for the analysis below, fixed parameters were identical to investigations into the independent variables’ effects conducted above, with the exception of the number of sensors in each network iteration.  
+
+
+Mining dynamics
+
+
+
+
+Gwei spent
+
+
+
+
+
+
+
+
+(deprecated vvvv
+A strong positive correlation (Pearson correlation coefficient: 0.99897) was observed between the recording frequency and the gwei spent per sensor, in line with expectations. Table x contains summary statistics. Of note: with fixed network sizes of 20 sensors, the maximum gwei spent per sensor per block of 390000 meant that the block gas limit of 9000000 gwei was never reached. This limited the potential insight into the behavior of the network as it scaled. Due to this, the parameter sweep was extended below.
+
+First, an OLS simple linear regression analysis was performed to model the relationship between record frequency and gwei expenditures. Figure xxx depicts a scatter plot of the two variables, along with the line of best fit. 
+
+
+Figure xxx: Sensor data capture frequencies against gwei spent per sensor per block
+
+
+
+
+The distribution of residual errors (Figure x), however, is not normal - the error observed at record_freq = 1.0 is outside the Tukey fences of the sample (k=1.5), and constitutes an outlier. Once again, this does not negate the positive correlation observed, it simply mean statistical significance cannot be placed on the Ordinary Least Squares regression model calculated. 
+
+
+Extending parameter sweeps
+Because the block gas limit was not exceeded in the record frequency parameter sweep, an additional sweep was performed with 40 sensors per network. 
+)
+
+
+
+
+Informational currency
+
+
+Further Investigation
+* The thresholds in mean informational currency observed across network sizes
+* Heterogeneity in sensors
+* Learning element: sensors adapting transmit frequency, on-board compute (data reduction), gas price in response to transaction confirmation times.
+
+
+
+
+References
+
+
+Mesa 2019. https://mesa.readthedocs.io/en/master/
+
+Wood 2019. Ethereum Yellow Paper. 
+
+
+Buterin 2014. Ethereum White Paper.
+
+
+Ryan 2017. https://hackernoon.com/ether-purchase-power-df40a38c5a2f
