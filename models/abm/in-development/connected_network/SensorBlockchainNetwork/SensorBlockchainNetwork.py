@@ -406,14 +406,6 @@ def get_informational_currency(agent):
     Attributes:
         agent: The Sensor for which to calculate
             informational currency measure.
-        window: The window through which to measure.
-
-            If window = 1, check proportion of data
-            reflected on chain from all time.
-
-            If window > 1, check proportion of data in
-            most recent n=window ticks that is reflected
-            on chain
     """
 
     model = agent.model

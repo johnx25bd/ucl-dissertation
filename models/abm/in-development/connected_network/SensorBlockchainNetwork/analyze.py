@@ -45,7 +45,7 @@ class SimpleOLSRegression():
 
     def print_regression_model_summary(self):
         print(self.regression_model.summary())
-        
+
     def summary_stats(self):
         self.dataframe.describe()
 
@@ -64,7 +64,6 @@ class SimpleOLSRegression():
             ptext = "p < 0.05"
         else:
             ptext = "p = " + str(round(self.pval, 5))
-
 
         # Visualizing observations and OLS regression
         plt.figure(figsize=(10,7))
