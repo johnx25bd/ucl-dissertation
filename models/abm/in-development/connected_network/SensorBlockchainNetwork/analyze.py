@@ -10,6 +10,8 @@ from statsmodels.tsa.stattools import adfuller
 from statsmodels.graphics.tsaplots import plot_acf
 from statsmodels.graphics.tsaplots import plot_pacf
 
+# from .Agents import * # << not necessary ... ? 
+
 class SimpleOLSRegression():
 
     def __init__(self, dataframe, iv, iv_name, dv, dv_name, verbose=True):
