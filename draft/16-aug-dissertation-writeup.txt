@@ -337,15 +337,66 @@ Since these models were intended to simulate the challenges blockchains might en
 
 
 Mining dynamics
+Initial examination of the scatter plot of mean mining times across record frequencies indicated that for record frequencies below 0.2, transactions tended to be mined immediately after submission. For simulations in which sensors took more frequent recordings, an exponential positive relationship was visible; this segment of the sample was analyzed. A OLS linear regression of record frequencies and the square root of mean mining times yielded a line of best fit shown in Figure xxx, with an R^2 value of 0.99243.
 
 
+Figure xxx: Record frequency (probability per block, > 0.2) vs square root of mean transaction mining time (blocks)
+
+
+Figure xxx: Residuals vs fits - record frequency vs square root of mean transaction mining time
+
+
+Analysis of this plot, and of the residual errors (Figure xxx) reveals that the square root transformation did not fully straighten the positive nonlinear relationship observed in the untransformed data. Performing an additional square root transformation yielded a distribution of residual errors nearer to normal, though uncertainty remains as to the true nature of the nonlinear relationship observed in the untransformed dataset (Figures xxx and xxx). Deeper investigation of these nonlinearities is beyond the scope of this analysis.
+
+
+Figure xxx: Record frequency (probability per block, > 0.2) vs double square root of mean transaction mining time (blocks)
+
+
+Figure xxx: Residuals vs fits - record frequency vs double square root of mean transaction mining time
+
+
+
+It does seem clear, however, that once a certain threshold level of transaction activity per block is reached, mining times per transaction rise in a nonlinear fashion. This result is important, and deserves further investigation, as it indicates that blockchain update performance would diminish rapidly as demand increases. Substantial research into mechanisms for managing these scaling challenges due to the inevitable fluctuations in network demand is ongoing (cite - sharding?); a solution to seems necessary if blockchains are to achieve their potential to form the critical informational infrastructure of the web.
 
 
 Gwei spent
+Figure xxx shows that mean gwei spent per sensor per block exhibited a positive linear correlation with record frequencies until a limit was reached, at an approximate record frequency of 0.5, after which the level remained roughly constant. This limit occurred at just below 200000 gwei per sensor per block. (Note the small difference between the median, third quartile and maximum values in Table x.) In a 40 sensor network, this is almost certainly  caused by the block gas limit: higher gwei expenditures would have exceeded the block gas limit, an impossibility according to the blockchain protocol. (Rather than exceed this limit, unvalidated transactions are simply left in the mempool to be validated in a future block.)
+
+
+Table x: Summary statistics, Mean gwei spent across record frequency parameter sweep
+
+
+Statistic
+	Value
+	n
+	21
+	Mean
+	135006.0
+	σ
+	77359.1
+	Minimum
+	3818.8
+	Quartile 1
+	42969.8
+	Median
+	192168.8
+	Quartile 3
+	194968.8
+	Maximum
+	195385.4
+	
 
 
 
 
+
+Figure xxx: 
+
+
+An OLS simple linear regression was performed to model the linear relationship between the variables at record frequency values less than 0.5; this plot, including the line of best fit, are depicted in Figure xxx. An R-squared value of 0.99924 corroborates the visual assessment of a near-perfect linear relationship. 
+
+
+Figure xxx: Record frequency (< 0.5) vs mean gwei spent per sensor per block with OLS line of best fit
 
 
 
@@ -372,6 +423,20 @@ Because the block gas limit was not exceeded in the record frequency parameter s
 
 
 Informational currency
+Measures of informational currency collected from model runs across the parameter sweep revealed that a recording frequency of ~0.5 yielded resulted in the highest values. Less frequent updates meant the blockchain was not updated often enough to result in high measures of the metric; as record frequency (and therefore transaction volumes) increased above this optimal level increasing mining times adversely affected network informational currency. 
+
+
+Figure xxx: Informational currency over time across recording frequencies
+
+
+
+
+Figure xxx: Record frequency vs mean model run informational currencies (excluding warm-up period)
+
+
+Interestingly, the model results depicted in Figure xxx show that at higher record frequencies, from a time series perspective within model runs informational currency measures tended to achieve their maximum toward the end of the warm-up period (equal to the window used for measuring the metric), then decayed to a stable level, at which point a stationary process was established. This pattern only occurred with record frequencies greater than 0.5. It seems that stable states may exist at different transaction volumes. As often, distinguishing between authentic system behavior and unintended behavior resulting from model design is difficult. Nonetheless, the result is interesting, and warrants further research.
+
+
 
 
 Further Investigation
